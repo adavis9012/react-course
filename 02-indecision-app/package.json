@@ -1,0 +1,19 @@
+{
+  "name": "indecision-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Velandia",
+  "license": "ISC",
+  "dependencies": {
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-react": "^6.24.1"
+  },
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-plugin-react": "^7.11.1"
+  }
+}
