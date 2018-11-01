@@ -1,4 +1,5 @@
-import './util';
-import isSenior from './person';
-console.log('Hey I\'m webpack 2!');
-console.log(isSenior(67));
+import { React } from 'react';
+import { ReactDom } from 'react-dom';
+
+const template = React.createElement('p',{}, 'testing 123');
+ReactDom.reder(template, document.getElementById('app'));
