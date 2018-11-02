@@ -1,5 +1,6 @@
-import { React } from 'react';
-import { ReactDom } from 'react-dom';
+// install -> import -> use
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const template = React.createElement('p',{}, 'testing 123');
-ReactDom.reder(template, document.getElementById('app'));
+const template = React.createElement('p', {}, 'testing 123');
+ReactDOM.render(template, document.getElementById('app'));
