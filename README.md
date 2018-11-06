@@ -43,3 +43,30 @@ babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
 
 #04-Indecision App (Webpack)
+## Class properties
+With `plugin-proposal-class-properties` is not longer required use constructor
+```
+class OldSyntax {
+    constructor() {
+        this.name = 'Mike';
+        this.getGretting = this.getGretting.bind(this);
+    }
+    getGretting() {
+        return `Hello ${this.name}`;
+    }
+}
+
+const oldSyntax = new OldSyntax();
+const oldGretting = oldSyntax.getGretting;
+console.log('oldGretting:', oldGretting());
+
+class NewSyntax {
+    name = 'Jen';
+    getGretting = () => {
+        return `Hello ${this.name}`;
+    }
+}
+const newSyntax = new NewSyntax();
+const newGretting = newSyntax.getGretting;
+console.log('newGretting:', newGretting());
+```
