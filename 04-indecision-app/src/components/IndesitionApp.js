@@ -5,15 +5,39 @@ import Header from './Header';
 import Action from './Action';
 
 export default class IndecisionApp extends React.Component {
-    constructor(props){
-        super(props);
-        this.handleDeleteOptions = this.handleDeleteOptions.bind(this);
-        this.handlePick = this.handlePick.bind(this);
-        this.handleAddOption = this.handleAddOption.bind(this);
-        this.handleDeleteOption = this.handleDeleteOption.bind(this);
-        this.state = {
+    state = {
+        options: []
+    }
+
+    handleDeleteOptions = ()  => {
+        this.setState(() => ({
             options: []
+        }));
+    }
+
+    handleDeleteOption = (optionToRemove)  => {
+        this.setState((prevState) => ({
+                options: prevState.options.filter((option) => (
+                    optionToRemove !== option
+                ))
+            })
+        );
+    }
+
+    handlePick = () => {
+        const choice = Math.floor(Math.random()*this.state.options.length);
+        alert(this.state.options[choice]);
+    }
+    
+    handleAddOption = (option) => {
+        if(option.length < 1){
+            return 'Enter a valid option'
+        } else if(this.state.options.indexOf(option) > -1){
+            return 'Option is already defined'
         }
+        this.setState((prevState) => ({
+            options: prevState.options.concat(option)
+        }));
     }
 
     componentDidMount() {
@@ -37,35 +61,6 @@ export default class IndecisionApp extends React.Component {
         console.log('componentWillUnmount!');
     }
 
-    handleDeleteOptions() {
-        this.setState(() => ({
-            options: []
-        }));
-    }
-
-    handleDeleteOption(optionToRemove) {
-        this.setState((prevState) => ({
-                options: prevState.options.filter((option) => (
-                    optionToRemove !== option
-                ))
-            })
-        );
-    }
-
-    handlePick(){
-        const choice = Math.floor(Math.random()*this.state.options.length);
-        alert(this.state.options[choice]);
-    }
-    handleAddOption(option){
-        if(option.length < 1){
-            return 'Enter a valid option'
-        } else if(this.state.options.indexOf(option) > -1){
-            return 'Option is already defined'
-        }
-        this.setState((prevState) => ({
-            options: prevState.options.concat(option)
-        }));
-    }
     render() {
         return (
             <section>
