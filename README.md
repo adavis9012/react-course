@@ -13,7 +13,7 @@ Table of contents
 
 # 01-Indecision App (Templates)
 ## Steps
-```
+```shell
 cd 01-indecision-app
 npm i -g live-server
 npm i -g babel-cli
@@ -23,7 +23,7 @@ babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
 # 02-Indecision App (Components - Class)
 ## Steps
-```
+```shell
 cd 02-indecision-app
 npm i -g live-server
 npm i -g babel-cli
@@ -33,7 +33,7 @@ babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
 # 03-Indecision App (Stateless Functional Components)
 ## Steps
-```
+```shell
 cd 03-indecision-app
 npm i -g live-server
 npm i -g babel-cli
@@ -42,10 +42,10 @@ live-server public
 babel src/app.js --out-file=public/scripts/app.js --presets=env,react --watch
 ```
 
-#04-Indecision App (Webpack)
+# 04-Indecision App (Webpack)
 ## Class properties
 With `plugin-proposal-class-properties` is not longer required use constructor
-```
+```javascript
 class OldSyntax {
     constructor() {
         this.name = 'Mike';
@@ -69,4 +69,32 @@ class NewSyntax {
 const newSyntax = new NewSyntax();
 const newGretting = newSyntax.getGretting;
 console.log('newGretting:', newGretting());
+```
+
+# 05-Indecision App (Using Third Party Component)
+Passing children to component
+```javascript
+    const Layout = (props) => {
+        return (
+            <div>
+                <p>Header</p>
+                    {props.children}
+                <p>Footer</p>
+            </div>
+        );
+    };
+
+    const Template = () => {
+        return (
+            <div>
+                <h1>Hey ho!</h1>
+            </div>
+        );
+    };
+
+    ReactDOM.render((
+        <Layout>
+            <Template/>
+        </Layout>
+    ), document.getElementById('app'));
 ```
