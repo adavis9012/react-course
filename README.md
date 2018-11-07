@@ -98,3 +98,5 @@ Passing children to component
         </Layout>
     ), document.getElementById('app'));
 ```
+## BEM convention
+http://getbem.com/
