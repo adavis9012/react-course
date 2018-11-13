@@ -99,4 +99,13 @@ Passing children to component
     ), document.getElementById('app'));
 ```
 ## BEM convention
-http://getbem.com/
+Block Element Modifier
+http://getbem.com/introduction/
+```css
+.block__element {
+    font-weight: 300;
+}
+.block--modifier {
+    font-weight: 300;
+}
+```
