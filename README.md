@@ -109,3 +109,9 @@ http://getbem.com/introduction/
     font-weight: 300;
 }
 ```
+
+# 06-Expensify App (React-Router)
+https://reacttraining.com/react-router/
+
+## Weback-config
+historyApiFallback: true
