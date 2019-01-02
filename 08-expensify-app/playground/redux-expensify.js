@@ -77,3 +77,10 @@ const demoState = {
     endDate: undefined
   }
 };
+
+const asdf = {
+  name: 'david',
+  age: 28
+};
+
+console.log({...asdf});
